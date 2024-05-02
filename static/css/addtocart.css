@@ -1,0 +1,33 @@
+.containercart{
+    height: 200px;
+    width: auto;
+    display: flex;
+    padding: 30px;
+    margin: 30px;
+}
+.cartimg{
+    height: 200px;width: 20%;
+    background-color: aqua;
+    border: 2px solid black;
+}
+.cartname{
+    height: 200px;width: 70%;
+    background-color: aqua;
+    border: 2px solid black;
+    text-align: center;
+    overflow: hidden;
+}
+.cartprice{
+    height: 200px;width: 10%;
+    background-color: aqua;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart-total{
+    margin-top: 15px;
+    padding-right: 55px;
+    text-align: right;
+    text-decoration: underline;
+}

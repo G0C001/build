@@ -1,0 +1,63 @@
+{% include "header.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/addtocart.css' %}">
+<body style="background-color: black;">
+    {% block content %}
+    <header class="header">
+        <div class="logo">
+            <h1 class="company-name"><img src="{% static 'image/logo.png'%}" class="logo-size">Trendy</h1>
+
+
+        </div>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'mens' %}">Men's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'womens' %}">Women's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'kids' %}">kid's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+    </header>
+
+    {% for i in cart_val %}
+    <div class="containercart">
+        <img src="{% static i.1 %}" alt="" class="cartimg">
+        <div class="cartname" style="background-color: black;color: aliceblue;border: 2px solid whitesmoke;">
+            <h1>{{i.2}}</h1>
+            <p>{{i.4}}</p>
+        </div>
+        <div class="cartprice"  style="background-color: black;color: aliceblue;border: 2px solid whitesmoke;">{{i.3}}</div>
+    </div>
+{% endfor %}
+
+<h1 class="cart-total" style="color: aliceblue;">Total: ₹<span id="totalAmount">0.00</span></h1>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var cartPrices = document.querySelectorAll('.cartprice');
+        var totalAmount = 0;
+
+        cartPrices.forEach(function(cartPriceElement) {
+            var price = parseFloat(cartPriceElement.innerText.replace('₹', '').trim());
+            totalAmount += price;
+        });
+
+        var totalElement = document.getElementById('totalAmount');
+        totalElement.innerText = totalAmount.toFixed(2);
+    });
+</script>
+{% endblock %}
+</body>

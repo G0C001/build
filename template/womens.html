@@ -1,0 +1,124 @@
+{% include "header.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        {% block content %}
+    
+        <!-- head -->
+        <header class="header">
+    
+            <div class="logo">
+                <h1 class="company-name" style="font-size: 42px;background: -webkit-linear-gradient(#eee, #333); -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;"><img src="{% static 'image/logo.png' %}" class="logo-size">Trendy</h1>
+    
+            </div>
+    
+    
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mens' %}">Men's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'womens' %}">Women's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'kids' %}">kid's</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+
+            <!-- <div class="alert-style">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div> -->
+        </header>
+        <h5 class=" text-center" style="background-color: rgb(0, 0, 0);margin: 0;color: aliceblue;padding: 10px;" >Best Clothes For Womens</h5>
+        <!-- head -->
+        <!-- dress content -->
+        <div class="container-body">
+    
+            {% for obj in data %}
+    
+           <div class="img-det">
+                
+                <img src="{% static obj.product_img %}"  class="card-img-top">
+                <div class="card-body"></div>
+                <h5 class="card-title product-name">{{ obj.product_Name }}</h5>
+                <h5 class="card-title product-price" >{{ obj.product_price }}</h5>
+                <input type="hidden" value="{{ obj.product_details }}" class="product-details">
+                <div class="buy-now">
+                    <a href="{% url 'womens_cart' id=obj.id %}" class="buy-now-style " style="text-decoration: none;">Buy Now</a>
+                    <i class="item-wish fa-solid fa-heart  fa-2x"></i>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- dress content -->
+    
+        <!-- footer -->
+    
+    <div class="fot-con">
+        <footer>
+            <div class="footer-1">
+                <h1 class="fa-solid ">T r e n d y</h1>
+                <p class="fa-solid fa-circle-check fa-2x"></p>
+            </div>
+        </footer>
+    
+    
+    
+        <div class="footer-body">
+    
+            <div class="fot-1">
+                <h1>Get In Touch</h1>
+                <h5><i class="fa-solid fa-location-dot"></i> 16/30 Arasu Colony, Tamil Nadu, INDIA</h5>
+                <h5><i class="fa-solid fa-phone-volume"></i></i>+91 73395 57072</h5>
+                <h5><i class="fa-solid fa-envelope"></i> gokulvbe1303@gmail.com</h5>
+                <ul>
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                    <i class="fa-brands fa-youtube fa-2x"></i>
+                    <i class="fa-brands fa-linkedin fa-2x"></i>
+                </ul>
+            </div>
+    
+            <div class="fot-1">
+                <h1>Quick Links</h1>
+                <ul class="get-in-touch">
+                    <a href=""><i class="fa-solid fa-greater-than"></i> About us</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i> Contact us</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i> Our Service</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i>Privacy Policy</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i>Terms & Condition</a>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-body2">
+            <h4>POWERED BY</h4>
+            
+            <h5><img src="{% static 'image/logo.png'%}" class="logo-size2  fa-solid">Trendy</h5>
+    
+        </div>
+    </div>
+
+    {% endblock %}
+    <script src="{% static 'js/script.js'%}"></script>
+    </body>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+django
+crispy_bootstrap5
+django-crispy-forms
+psycopg2-binary==2.9.9

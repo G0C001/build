@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+}
+.alert-warning{
+    height: 100px;width: 100%;
+    margin: 0;
+    background-color: rgb(231, 9, 9);
+    color: rgb(255, 255, 255);
+    border: 2px lawngreen;
+    position: fixed;
+    margin-top: -120px;
+}
+.btn-close{
+    background-color: rgb(244, 231, 231);
+    margin: 10px;
+}
+.header{
+    height: auto;width: 100%;
+    background-color: rgb(62, 61, 61);
+    position: sticky;
+    top: -70px;
+    padding-bottom: 10px;
+}
+.logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 80px;width: auto;
+    background-color: rgb(62, 61, 61);
+}
+.logo-size{
+    height: 45px;
+    margin-bottom: 20px;
+}
+.myaccount{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 20px;
+    padding: 20px;
+}
+/* .wishlist{
+    line-height: 20px;
+    margin-right: 10px;
+} */
+/* .cart-count{
+    margin-top: -10px;
+} */
+.navbar-nav{
+    margin-top: -5px;
+}
+.fa-cart-shopping{
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-link{
+    color: azure;
+}
+.container-body{
+    background-color: rgb(5, 5, 5);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    justify-items: center;
+    padding-top: 50px;
+    color: white;
+    border-bottom: 1px solid rgb(245, 245, 245);
+
+}
+.img-det{
+    height: auto;width: 300px;
+    background-color: rgb(36, 36, 60);
+    color: aliceblue;
+    font-family: cursive;
+    margin-bottom: 50px;
+}
+.card-img-top{
+    height: 300px;width: 300px;
+}
+.buy-now{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.buy-now-style{
+    background-color: rgb(13, 15, 15);
+    border-radius: 25px;
+    color: whitesmoke;
+    padding: 10px;
+    font-weight: bold;
+    line-height: 20px;
+}
+.fa-heart{
+  margin-top: 5px;
+  cursor: pointer;
+}
+.card-img-top,.card-body,.card-title{
+    margin-bottom: 10px;
+}
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+    padding-top: 40px;
+}
+.logo-center{
+    justify-content: center;
+    margin-left: 90px;
+}
+.footer-body{
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    justify-items: center;
+    padding-top: 50px;
+    color: white;
+    border-bottom: 1px solid whitesmoke;
+}
+.fa-circle-check{
+    margin-left: 10px;
+    color: blue;
+}
+.fa-location-dot,.fa-phone-volume,.fa-envelope{
+    margin: 5px;padding: 2px;
+}
+.fa-brands{
+   border-radius: 15px;
+   padding: 9px;
+   margin: 5px;
+   outline: 2px solid white;
+}
+.fot-1{
+    margin-bottom: 30px;
+}
+.fa-greater-than{
+    margin: 8px;
+}
+.logo-size2{
+    height: 40px;
+    margin-top: -10px;
+}
+.footer-body2{
+    background-color: rgb(46, 44, 44);
+    color: white;
+    text-align: end;
+    padding: 50px;
+    font-style: italic;
+}
+.fa-beat-fade{
+    overflow: hidden;
+}
+ 
+

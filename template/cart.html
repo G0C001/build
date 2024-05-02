@@ -1,0 +1,155 @@
+{% include "header.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/addcart.css' %}">
+</head>
+<body>
+    {% block content %}
+    <header class="header">
+        <div class="logo">
+            <h1 class="company-name"><img src="{% static 'image/logo.png'%}" class="logo-size">Trendy</h1>
+
+
+        </div>
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'mens' %}">Men's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'womens' %}">Women's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'kids' %}">kid's</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+        </ul>
+
+
+
+        <!-- <div class="alert-style">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div> -->
+    </header>
+
+
+    <div class="cart-container">
+        <div style="margin-bottom: 20px;">
+            <img src="{% static cart_data.product_img %}" class="cart-img one">
+        </div>
+
+        <div>
+            <div class="col-lg-4">
+                <div class="right-content">
+                    <h1 class="two">{{ cart_data.product_Name }}</h1>
+                    <option class="price three item-price" value="{{ cart_data.product_price }}">{{ cart_data.product_price }}</option><br>
+                    <a href="{% url 'addme' %}"><button class="cart-button">
+                        <span class="add-to-cart">Add to cart</span>
+                        <span class="added">Added</span>
+                        <i class="fas fa-shopping-cart"></i>
+                        <i class="fas fa-box"></i>
+                      </button></a>
+                    <br><br>
+
+                    <div class="quote">
+                        <i class="fa fa-quote-left fa-sm"></i>
+                        <p class="four">{{ cart_data.product_details }}</p>
+                    </div>
+                    <div class="quantity-content">
+                        <div class="left-content">
+                            <h6 class="orders">No. of Orders</h6><br>
+                        </div>
+                        <div class="right-content">
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus" onclick="decrementQuantity()">
+
+                                <button type="number" step="1" min="1" max="9" name="quantity" value="1" title="Qty"
+                                    class="input-text qty text" size="4" placeholder="1"></button>
+
+                                <input type="button" value="+" class="plus" onclick="incrementQuantity()">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="total">
+                        <h4 class="total-value total-price">{{ cart_data.product_price }}</h4><br>
+                        <div> <a style=" width: 135px; background-color: #279ded; text-align: center; font-weight: 800; padding: 11px 0px; color: rgb(13, 13, 13); font-size: 12px; display: inline-block; text-decoration: none; " href='https://test.payumoney.com/url/PIIrzu9o5yjW' > Buy Now </a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- footer -->
+
+    <div class="fot-con">
+        <footer>
+            <div class="footer-1">
+                <h1 class="fa-solid ">T r e n d y</h1>
+                <p class="fa-solid fa-circle-check fa-2x"></p>
+            </div>
+        </footer>
+
+        <div class="footer-body">
+
+            <div class="fot-1">
+                <h1>Get In Touch</h1>
+                <h5><i class="fa-solid fa-location-dot"></i> 16/30 Arasu Colony, Tamil Nadu, INDIA</h5>
+                <h5><i class="fa-solid fa-phone-volume"></i></i>+91 73395 57072</h5>
+                <h5><i class="fa-solid fa-envelope"></i> gokulvbe1303@gmail.com</h5>
+                <ul>
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                    <i class="fa-brands fa-facebook fa-2x"></i>
+                    <i class="fa-brands fa-youtube fa-2x"></i>
+                    <i class="fa-brands fa-linkedin fa-2x"></i>
+                </ul>
+            </div>
+
+            <div class="fot-1">
+                <h1>Quick Links</h1>
+                <ul class="get-in-touch">
+                    <a href=""><i class="fa-solid fa-greater-than"></i> About us</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i> Contact us</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i> Our Service</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i>Privacy Policy</a><br>
+                    <a href=""><i class="fa-solid fa-greater-than"></i>Terms & Condition</a>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-body2">
+            <h4>POWERED BY</h4>
+            {% endblock %}
+            <h5><img src="{% static 'image/logo.png'%}" class="logo-size2  fa-solid">Trendy</h5>
+
+        </div>
+    </div>
+    <script src="{% static 'js/cart.js'%}"></script>
+    <script>
+            const cartButtons = document.querySelectorAll('.cart-button');
+
+            cartButtons.forEach(button => {
+            button.addEventListener('click', cartClick);
+            });
+
+            function cartClick() {
+            let button = this;
+            button.classList.add('clicked');
+            }
+    </script>
+
+</body>
+</html>
